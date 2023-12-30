@@ -1,7 +1,7 @@
 # Repository-Manager
 Create a way for me to make lists of random repositoryes and a section for my own repos. This will help me replace the system I have now where I star all my projects and you the star list thing to order them.
 
-Simple one page app.
+Simple one page app.  
 Github auth login
 Local sotrage to save info.
 Have multiple sections hotdog style that you can drag repos into. Propabably with the drag and drop api.
