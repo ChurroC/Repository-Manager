@@ -22,3 +22,10 @@ Figured it out. I need repo to category to match any repos that have been delted
 This is because first I would call github and find all the repos he's in. Then I randomly start trying to ping the user db for each repo. If a repo is in a category then it goes into that category else it goes to the top with category section.\
 Then if any repo was deleted it wouldn't be asked for data so I coudl rewrite the entire repo db for that user with the current info.\
 Shoudl I save all the repos that don't have category in db?
+
+Have an actual main page for new people. Myabe have a shared navbar. Have a 3d rotating github symbol on the left with name. Then just have a accoutn setting thing. Or just have a single page that asks for accoutn then insta poipulates with all the data and by pressing profiel pic you get a popup. Lightmode in navbar. Mayeb shoudl have a main page for people to actually see the app and have a presentable front.
+have / be main page kinda based of https://turbo.build/pack love this site and https://www.githubwrapped.io not so great but basic
+have /manager be the page where you categorize evrything since /username would be not point since you can't see other peoples categories. So only yours.
+have /about
+
+also get a basic logo or jsut spin github logo on top left.
