@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use client";
+import { useState } from "react";
 import {
     closestCenter,
     DndContext,
@@ -21,7 +22,7 @@ import { SortableItem } from "./SortableItem";
 import { Item } from "./Item";
 
 export function MultipleComponent() {
-    const [activeId, setActiveId] = useState(null);
+    const [activeId, setActiveId] = useState<string | number | null>(null);
     const [items, setItems] = useState(["1", "2", "3"]);
     const sensors = useSensors(
         useSensor(PointerSensor),
@@ -42,7 +43,9 @@ export function MultipleComponent() {
                 strategy={verticalListSortingStrategy}
             >
                 {items.map(id => (
-                    <SortableItem key={id} id={id} />
+                    <SortableItem key={id} id={id}>
+                        {id}
+                    </SortableItem>
                 ))}
             </SortableContext>
             <DragOverlay>
@@ -62,8 +65,8 @@ export function MultipleComponent() {
 
         if (active.id !== over?.id) {
             setItems(items => {
-                const oldIndex = items.indexOf(active.id);
-                const newIndex = items.indexOf(over.id);
+                const oldIndex = items.indexOf(active.id.toString());
+                const newIndex = items.indexOf(over?.id.toString() ?? "");
 
                 return arrayMove(items, oldIndex, newIndex);
             });

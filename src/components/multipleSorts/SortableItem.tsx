@@ -1,12 +1,18 @@
-import React from "react";
+"use client";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-import Item from "./Item";
+import { Item } from "./Item";
 
-export function SortableItem(props) {
+export function SortableItem({
+    id,
+    children
+}: {
+    id: string | number;
+    children: React.ReactNode;
+}) {
     const { attributes, listeners, setNodeRef, transform, transition } =
-        useSortable({ id: props.id });
+        useSortable({ id });
 
     const style = {
         transform: CSS.Transform.toString(transform),
@@ -15,7 +21,7 @@ export function SortableItem(props) {
 
     return (
         <Item ref={setNodeRef} style={style} {...attributes} {...listeners}>
-            {value}
+            {children}
         </Item>
     );
 }
