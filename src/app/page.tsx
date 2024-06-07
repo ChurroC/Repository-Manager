@@ -1,3 +1,4 @@
+import { Dropdowns } from "@/components/Dropdowns";
 import { Repos } from "@/components/Repos";
 
 // lock or unlocked svg for private or not
@@ -14,6 +15,7 @@ export default function HomePage() {
                 />
                 <Repos />
             </main>
+            <Dropdowns />
         </>
     );
 }

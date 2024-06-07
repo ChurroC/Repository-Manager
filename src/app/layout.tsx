@@ -1,6 +1,7 @@
-import "./globals.css";
-
+import { DndContext } from "@dnd-kit/core";
 import { GeistSans } from "geist/font/sans";
+
+import "./globals.css";
 
 export const metadata = {
     title: "Create T3 App",

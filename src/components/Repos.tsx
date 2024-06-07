@@ -13,14 +13,7 @@ export async function Repos() {
         <>
             <ul className="flex flex-wrap justify-center">
                 {repos.map(repo => (
-                    <li
-                        key={repo.id}
-                        className="m-1 w-fit text-nowrap rounded bg-stone-900 px-2 text-white"
-                    >
-                        <a href={repo.html_url} className=" ">
-                            {repo.name}
-                        </a>
-                    </li>
+                    <Repo key={repo.id} repo={repo} />
                 ))}
             </ul>
         </>
