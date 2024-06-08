@@ -22,7 +22,8 @@ import { SortableItem } from "./SortableItem";
 import { Item } from "./Item";
 
 export function MultipleComponent() {
-    const [activeId, setActiveId] = useState<string | number | null>(null);
+    const [activeId, setActiveId] = useState<string | null>(null);
+    // Got to have array in same order as rendered
     const [items, setItems] = useState(["1", "2", "3"]);
     const sensors = useSensors(
         useSensor(PointerSensor),
@@ -49,7 +50,7 @@ export function MultipleComponent() {
                 ))}
             </SortableContext>
             <DragOverlay>
-                {activeId ? <Item id={activeId} /> : null}
+                {activeId ? <Item>{activeId}</Item> : null}
             </DragOverlay>
         </DndContext>
     );
@@ -57,7 +58,7 @@ export function MultipleComponent() {
     function handleDragStart(event: DragStartEvent) {
         const { active } = event;
 
-        setActiveId(active.id);
+        setActiveId(active.id.toString());
     }
 
     function handleDragEnd(event: DragEndEvent) {
