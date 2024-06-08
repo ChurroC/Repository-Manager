@@ -1,4 +1,4 @@
-import { MultipleComponent } from "@/components/multipleSorts/MultipleComponent";
+import { SortableComponent } from "@/components/multipleSortable/SortableComponent";
 
 export default function Slots() {
     return (
@@ -7,7 +7,7 @@ export default function Slots() {
                 Repo Manager
             </h1>
             <div>
-                <MultipleComponent />
+                <SortableComponent />
             </div>
         </main>
     );
