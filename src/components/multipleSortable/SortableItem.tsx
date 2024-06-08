@@ -12,8 +12,14 @@ export function SortableItem({
     id: string | number;
     children: React.ReactNode;
 }) {
-    const { attributes, listeners, setNodeRef, transform, transition, isOver } =
-        useSortable({ id });
+    const {
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+        isDragging
+    } = useSortable({ id });
 
     const style = {
         transform: CSS.Transform.toString(transform),
@@ -21,7 +27,13 @@ export function SortableItem({
     };
 
     return (
-        <Item ref={setNodeRef} style={style} {...attributes} {...listeners}>
+        <Item
+            ref={setNodeRef}
+            style={style}
+            className={isDragging ? "opacity-50" : ""}
+            {...attributes}
+            {...listeners}
+        >
             {children}
         </Item>
     );
