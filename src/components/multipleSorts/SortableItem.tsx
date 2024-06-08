@@ -4,13 +4,7 @@ import { CSS } from "@dnd-kit/utilities";
 
 import { Item } from "./Item";
 
-export function SortableItem({
-    id,
-    children
-}: {
-    id: string | number;
-    children: React.ReactNode;
-}) {
+export function SortableItem({ id }: { id: string | number }) {
     const { attributes, listeners, setNodeRef, transform, transition } =
         useSortable({ id });
 
@@ -21,7 +15,7 @@ export function SortableItem({
 
     return (
         <Item ref={setNodeRef} style={style} {...attributes} {...listeners}>
-            {children}
+            a
         </Item>
     );
 }

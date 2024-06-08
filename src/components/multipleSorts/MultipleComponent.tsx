@@ -4,17 +4,12 @@ import {
     closestCenter,
     DndContext,
     DragOverlay,
-    KeyboardSensor,
-    PointerSensor,
-    useSensor,
-    useSensors,
     type DragStartEvent,
     type DragEndEvent
 } from "@dnd-kit/core";
 import {
     arrayMove,
     SortableContext,
-    sortableKeyboardCoordinates,
     verticalListSortingStrategy
 } from "@dnd-kit/sortable";
 
@@ -26,16 +21,9 @@ export function MultipleComponent() {
     const [activeId, setActiveId] = useState<string | null>(null);
     // Got to have array in same order as rendered
     const [items, setItems] = useState(["1", "2", "3"]);
-    const sensors = useSensors(
-        useSensor(PointerSensor),
-        useSensor(KeyboardSensor, {
-            coordinateGetter: sortableKeyboardCoordinates
-        })
-    );
 
     return (
         <DndContext
-            sensors={sensors}
             collisionDetection={closestCenter}
             onDragStart={handleDragStart}
             onDragEnd={handleDragEnd}
@@ -45,9 +33,7 @@ export function MultipleComponent() {
                 strategy={verticalListSortingStrategy}
             >
                 {items.map(id => (
-                    <SortableItem key={id} id={id}>
-                        {id}
-                    </SortableItem>
+                    <SortableItem key={id} id={id} />
                 ))}
             </SortableContext>
             <InPortal>
