@@ -20,6 +20,7 @@ import {
 
 import { SortableItem } from "./SortableItem";
 import { Item } from "./Item";
+import { InPortal } from "@/util/inPortal";
 
 export function MultipleComponent() {
     const [activeId, setActiveId] = useState<string | null>(null);
@@ -49,9 +50,11 @@ export function MultipleComponent() {
                     </SortableItem>
                 ))}
             </SortableContext>
-            <DragOverlay>
-                {activeId ? <Item>{activeId}</Item> : null}
-            </DragOverlay>
+            <InPortal>
+                <DragOverlay>
+                    {activeId ? <Item>{activeId}</Item> : null}
+                </DragOverlay>
+            </InPortal>
         </DndContext>
     );
 
