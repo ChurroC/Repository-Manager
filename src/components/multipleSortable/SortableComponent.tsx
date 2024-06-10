@@ -24,9 +24,9 @@ export function SortableComponent() {
     // Also modify the data to be represented using id as object like below
     // makeu sure id is a string
     const githubApiData: Record<string, string> = {
-        "388": "bob",
-        "237": "test",
-        "239": "9"
+        388: "bob",
+        237: "test",
+        239: "9"
     };
 
     const [activeId, setActiveId] = useState<string | null>(null);

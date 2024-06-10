@@ -1,4 +1,5 @@
 import { SortableComponent } from "@/components/multipleSortable/SortableComponent";
+import { MultipleSortableComponent } from "@/components/multipleSortable/Multiple";
 
 export default function Slots() {
     return (
@@ -8,6 +9,9 @@ export default function Slots() {
             </h1>
             <div>
                 <SortableComponent />
+            </div>
+            <div>
+                <MultipleSortableComponent />
             </div>
         </main>
     );
