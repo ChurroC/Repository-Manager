@@ -1,5 +1,5 @@
-import type RepoType from "@/types/repo";
-import { Repo } from "@/components/Repo";
+import type RepoType from "nextjs/src/types/repo";
+import { Repo } from "nextjs/src/components/Repo";
 
 export async function Repos() {
     // check for not foudn latyer

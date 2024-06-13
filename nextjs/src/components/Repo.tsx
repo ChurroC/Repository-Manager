@@ -1,4 +1,4 @@
-import type Repo from "@/types/repo";
+import type Repo from "nextjs/src/types/repo";
 
 export function Repo({ repo }: { repo: Repo }) {
     return (

@@ -17,7 +17,7 @@ import {
 
 import { SortableItem } from "./SortableItem";
 import { Item } from "./Item";
-import { InPortal } from "@/util/inPortal";
+import { InPortal } from "nextjs/src/util/inPortal";
 
 export function MultipleSortableComponent() {
     // Get data on server and just pass down once since we do not need to refetch

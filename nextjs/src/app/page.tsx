@@ -1,5 +1,5 @@
-import { Dropdowns } from "@/components/Dropdowns";
-import { Repos } from "@/components/Repos";
+import { Dropdowns } from "nextjs/src/components/Dropdowns";
+import { Repos } from "nextjs/src/components/Repos";
 
 // lock or unlocked svg for private or not
 export default function HomePage() {
