@@ -1,0 +1,25 @@
+.Root {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 20;
+}
+
+.Column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    min-width: 200px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.Item {
+    appearance: none;
+    background: #fff;
+    color: #666;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: grab;
+}
