@@ -13,9 +13,7 @@ export default function HomePage() {
                     type="text"
                     className=" my-10 w-full rounded-md border-2 bg-neutral-50"
                 />
-                <Repos />
             </main>
-            <Dropdowns />
         </>
     );
 }

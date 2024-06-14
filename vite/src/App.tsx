@@ -1,22 +1,22 @@
 import { DragDropProvider } from "@dnd-kit/react";
-import { Draggable } from "./Draggable";
-import { Droppable } from "./Droppable";
-import { Sortable } from "./Sortable";
 import { MultipleSortable } from "./multipleSortable/MultipleSortable";
 
 function App() {
-    const items = [2, 1, 4, 3];
     return (
-        <DragDropProvider>
-            <Draggable></Draggable>
-            <Droppable>s</Droppable>
-            <ul>
-                {items.map((id, index) => (
-                    <Sortable key={id} id={id} index={index} />
-                ))}
-            </ul>
-            <MultipleSortable></MultipleSortable>
-        </DragDropProvider>
+        <>
+            <main className="m-auto w-2/3 max-w-3xl bg-white/60 backdrop-blur">
+                <h1 className="pt-10 text-center text-3xl tracking-tighter">
+                    Repo Manager
+                </h1>
+                <input
+                    type="text"
+                    className=" my-10 w-full rounded-md border-2 bg-neutral-50"
+                />
+                <DragDropProvider>
+                    <MultipleSortable />
+                </DragDropProvider>
+            </main>
+        </>
     );
 }
 
