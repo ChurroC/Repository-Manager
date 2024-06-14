@@ -13,14 +13,12 @@ export function MultipleSortable() {
         C: []
     });
     const previousItems = useRef(items);
-    const [columnOrder, setColumnOrder] = useState(() => Object.keys(items));
-    const previousColumn = useRef(columnOrder);
+    const [columnOrder, setColumnOrder] = useState(Object.keys(items));
 
     return (
         <DragDropProvider
             onDragStart={() => {
                 previousItems.current = items;
-                previousColumn.current = columnOrder;
             }}
             onDragMove={event => {
                 const { source, target } = event.operation;
@@ -36,11 +34,10 @@ export function MultipleSortable() {
                 const { source, target } = event.operation;
 
                 if (event.canceled) {
-                    if (source.type === "item") {
+                    if (source?.type === "item") {
                         setItems(previousItems.current);
-                    } else if (source.type === "column") {
-                        console.log(previousColumn.current);
-                        setColumnOrder(previousColumn.current);
+                    } else if (source?.type === "column") {
+                        setColumnOrder(Object.keys(previousItems.current));
                     }
                     return;
                 }
