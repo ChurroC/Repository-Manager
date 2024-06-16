@@ -1,4 +1,3 @@
-import { DragDropProvider } from "@dnd-kit/react";
 import { MultipleSortable } from "./multipleSortable/MultipleSortable";
 
 function App() {
@@ -12,9 +11,7 @@ function App() {
                     type="text"
                     className=" my-10 w-full rounded-md border-2 bg-neutral-50"
                 />
-                <DragDropProvider>
-                    <MultipleSortable />
-                </DragDropProvider>
+                <MultipleSortable />
             </main>
         </>
     );

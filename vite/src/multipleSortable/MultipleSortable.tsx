@@ -33,7 +33,7 @@ export function MultipleSortable() {
                 }
             }}
             onDragEnd={event => {
-                const { source, target } = event.operation;
+                const { source } = event.operation;
 
                 if (event.canceled) {
                     if (source?.type === "item") {
@@ -49,7 +49,7 @@ export function MultipleSortable() {
                 }
             }}
         >
-            <div className="grid">
+            <div className="flex justify-between gap-5">
                 {columnOrder.map((columnId, columnIndex) => (
                     <Column
                         key={columnId}
