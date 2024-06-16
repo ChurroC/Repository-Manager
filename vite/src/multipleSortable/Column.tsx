@@ -25,8 +25,10 @@ export function Column({
     });
 
     return (
-        <div className={className} ref={ref}>
-            {children}
-        </div>
+        <>
+            <div className={className} ref={ref}>
+                {children}
+            </div>
+        </>
     );
 }

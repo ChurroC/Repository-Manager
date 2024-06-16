@@ -6,7 +6,8 @@ export function Item({ id, index, column }) {
         index,
         type: "item",
         accept: "item",
-        group: column
+        group: column,
+        feedback: "clone"
     });
 
     return <button ref={ref}>{id}</button>;
