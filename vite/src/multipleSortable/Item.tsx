@@ -9,9 +9,5 @@ export function Item({ id, index, column }) {
         group: column
     });
 
-    return (
-        <button ref={ref} className="Item">
-            {id}
-        </button>
-    );
+    return <button ref={ref}>{id}</button>;
 }
