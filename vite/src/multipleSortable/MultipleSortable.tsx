@@ -15,7 +15,7 @@ export function MultipleSortable() {
         E: ["E0"],
         F: ["F0"],
         G: ["G0"],
-        t: ["t0"]
+        S: ["S0"]
     });
     const previousItems = useRef(items);
     const [columnOrder, setColumnOrder] = useState(
@@ -54,12 +54,12 @@ export function MultipleSortable() {
                 }
             }}
         >
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-6 gap-5 ">
                 {columnOrder.map((columnId, columnIndex) => (
                     <Column
                         id={columnId}
                         index={columnIndex}
-                        className="flex flex-col rounded-md min-w-60 bg-neutral-100 opacity-70 border"
+                        className="flex flex-col rounded-md min-w-60 bg-neutral-100 opacity-70 border col-span-2 last:[&:nth-child(3n-1)]:-col-end-2 [&:nth-last-child(2):nth-child(3n+1)]:col-end-4 last:[&:nth-child(3n-2)]:col-end-5"
                         key={columnId}
                     >
                         <div className="bg-white border-b pl-5 h-11 flex items-center">
